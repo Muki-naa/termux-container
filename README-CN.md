@@ -21,9 +21,13 @@ container configure
 ### [termux-container wiki](https://github.com/Moe-hacker/termux-container/wiki)
 ### 交个官方作业：      
 ![image](https://github.com/Moe-hacker/termux-container/raw/main/.Screenshots/screenshot-ubuntu.jpg)
-系统ubuntu，链接：      
+####系统ubuntu镜像版，链接：      
 https://share.weiyun.com/6sSwpBW8      
-解压后为16G镜像文件，建议先执行fsck.ext4一下。     
+解压后为16G镜像文件，建议先执行fsck.ext4一下（镜像解压放在sdcard后，先运行sudo fsck.ext4 /sdcard/ubuntu.img修复下文件系统，一路按y就行）。  
+镜像安装版本，解压得到ubuntu.img文件，放在/sdcard目录下，创建文件夹/sdcard/ubuntu，使用我的termux-container项目，安装后手动编辑配置文件/data/data/com.termux/files/usr/etc/container.conf，配置文件如下：CHROOT_IMG=/sdcard/ununtu.img CHROOT_DIR=/sdcard/ubuntu SELINUX=y HOSTNAME=localhost OUTPUT=y SLEEP=y
+####ubuntu.tar目录安装版的，包很大，忍一下[受虐滑稽]
+下载地址: https://share.weiyun.com/dFV0du4t 文件大小:10.4G
+
 ### BUGS：      
 &emsp;目前已知可能有些设备ping无法使用，不过据说影响不大。      
 &emsp;archlinux中fakeroot需自行编译，否则yay的buildpkg环节会报错。      
